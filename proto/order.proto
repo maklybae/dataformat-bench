@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package dataformat_bench;
+
+message Order {
+  string order_id = 1;
+  int64 customer_id = 2;
+  int64 product_id = 3;
+  string product_name = 4;
+  string category = 5;
+  int32 quantity = 6;
+  double price = 7;
+  double total_amount = 8;
+  int64 order_date = 9;  // Unix timestamp in milliseconds
+  string shipping_country = 10;
+  string payment_method = 11;
+  bool is_returned = 12;
+}
+
+message OrderBatch {
+  repeated Order orders = 1;
+}
